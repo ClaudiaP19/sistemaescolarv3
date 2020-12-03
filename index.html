@@ -5,7 +5,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Sistema escolar V3</title>
     <link rel='stylesheet' href='node_modules/bulma/css/bulma.min.css'>
-    <script src='node_modules/axios/dist/axios.min.js'></script>
 </head>
 <body>
 <div class="box">
@@ -26,23 +25,11 @@
                 </div>
                 <div class="field">
                     <div class="control">
-                        <input class="button" type="submit" value="Enviar" onclick="login()">
+                        <input class="button" type="submit" value="Enviar">
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
-    <script>
-        function login() {
-           /* axios.post('api/index.php/login/$(document.forms[0].usuario.value}',{
-
-            })*/
-            axios.get('http://webcode.me').then(resp=>{
-                console.log('hola');
-            });
-        }
-    </script>
-
-
 </body>
