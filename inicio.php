@@ -6,7 +6,7 @@ require 'config\database.php';
 
 $user = DB::table('usuarios')
     ->leftJoin('perfiles','usuarios.id_perfil','=','perfiles.id_perfil')
-    ->where('usuarios.id_usuario',$_GET['id_usuario'])
+    ->where('usuarios.id_usuario',$_POST['id_usuario'])
     ->first();
 
 $alumnos = DB::table('alumnos')

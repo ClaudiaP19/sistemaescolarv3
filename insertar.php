@@ -11,4 +11,6 @@ DB::table('calificaciones')->insert(
         ]
 );
 
-echo "<h1>DATOS GUARDADOS</h1><br><a href='inicio.php?id_usuario={$_POST['id_usuario']}'>Regresar</a>";
+echo "<h1>DATOS GUARDADOS </h1><br><form action='inicio.php' method='post'>
+                <input id='id_usuario' type='text' name='id_usuario' value='{$_POST['id_usuario']}' hidden>
+                <input class='button' type='submit' value='Regresar al sistema escolar'></form>";

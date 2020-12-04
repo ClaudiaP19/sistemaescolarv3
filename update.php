@@ -9,4 +9,8 @@ DB::table('calificaciones')
     ->update(['calificacion'=>$_POST['calificacion']]);
 
 echo "Se actualizó la calificación del id: {$_POST['id_calificacion']}
-<a class='button' href='consultar.php'>REGRESAR</a>";
+
+<form action='consultar.php' method='post'>
+           <input id='id_usuario' type='text' name='id_usuario' value='{$_POST['id_usuario']}' >
+           <input class='button' type='submit' value='Regresar al sistema escolar'>
+         </form>";

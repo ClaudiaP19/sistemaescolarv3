@@ -12,7 +12,9 @@ $mensaje = '';
 if($user and $user->password == $_POST['password']){
 
     if($user->id_perfil == 1){
-        $mensaje ="<h1>Bienvenido {$user->nombre_perfil}: {$user->nombre_usuario}</h1><br><a href='inicio.php?id_usuario={$user->id_usuario}'>Entrar al sistema escolar</a>";
+        $mensaje ="<h1>Bienvenido {$user->nombre_perfil}: {$user->nombre_usuario}</h1><br><form action='inicio.php' method='post'>
+                <input id='id_usuario' type='text' name='id_usuario' value='{$user->id_usuario}' hidden>
+                <input class='button' type='submit' value='Entrar al sistema escolar'></form>";
     }
     else{
         $mensaje = "<h1>Bienvenido {$user->nombre_perfil}: {$user->nombre_usuario}</h1><br><form action='consultar_alumno.php' method='post'>

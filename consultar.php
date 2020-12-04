@@ -32,11 +32,12 @@ foreach ($users as $fila){
         <th>$fila->id_calificacion</th>
         <td><center>$fila->calificacion</center></td>
         <th>{$fila->nombre} {$fila->primer_apellido} {$fila->segundo_apellido}</th>
-        <td><a class="button" href="delete.php?id={$fila->id_calificacion}">ELIMINAR</a></td>
+        <td><a class="button" href="delete.php?id_usuario={$_POST['id_usuario']}&id={$fila->id_calificacion}">ELIMINAR</a></td>
         <td>
             <form action="update.php" method="post">
-                <input id="calificacion" type="text" name="id_calificacion" value="{$fila->id_calificacion}" hidden>
+                <input id="id_calificacion" type="text" name="id_calificacion" value="{$fila->id_calificacion}" hidden>
                 <input id="calificacion" type="text" name="calificacion" size="3">
+                <input id="id_usuario" type="text" name="id_usuario"  value="{$_POST['id_usuario']}" hidden>
                 <input class="button" type="submit" value="ACTUALIZAR">
             </form>
         </td>
@@ -46,5 +47,7 @@ _ROW;
 echo  "
 </tbody>
 </table>
-    <a class='button' href='inicio.php?id_usuario={$_POST['id_usuario']}'>REGRESAR</a>";
-
+<form action='inicio.php' method='post'>
+                <input id='id_usuario' type='text' name='id_usuario' hidden value='{$_POST['id_usuario']}'  >
+                <input class='button' type='submit' value='Regresar al sistema escolar'>
+</form>";

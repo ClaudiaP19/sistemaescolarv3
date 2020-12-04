@@ -8,4 +8,7 @@ DB::table('calificaciones')
     ->where('id_calificacion',$_GET['id'])->delete();
 
 echo "Se elimino la calificación con el id:{$_GET['id']}
-<a class='button' href='consultar.php'>REGRESAR</a>";
+<form action='consultar.php' method='post'>
+    <input id='id_usuario' type='text' name='id_usuario' value='{$_GET['id_usuario']}' hidden>
+    <input class='button' type='submit' value='Regresar al sistema escolar'>
+</form>";
